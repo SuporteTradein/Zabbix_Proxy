@@ -7,12 +7,12 @@ Scripts para automatizar instalação de proxys Zabbix em novos clientes
 
 .sh:
 
-* 1. Faça o download do script de instalação.
+1. Faça o download do script de instalação.
 
 ```sh
 git clone https://github.com/SuporteTradein/Zabbix_Proxy.git
 ```
-* 2. Faça o download dos pacotes de instalação informando a função, distro e versão do SO.
+2. Faça o download dos pacotes de instalação informando a função, distro e versão do SO.
 
 ```sh
 bash Zabbix_Proxy/zbx_proxy.sh download debian 9
@@ -20,13 +20,13 @@ bash Zabbix_Proxy/zbx_proxy.sh download debian 9
 _OBS.: INFORMAR DISTRO TOTALMENTE EM MINUSCULO, ABAIXO ESTÁ A LISTA DE DISTRO E VERSÕES SUPORTADAS._
 _OBS.2: PARA OS SISTEMAS CENTOS, RED-HAT E ORACLE UTILIZAR "rhel"._
 
-* 3. Em caso de primeira instalação execute o comando a seguir _INFORMANDO DISTRO E VERSÃO_.
+3. Em caso de primeira instalação execute o comando a seguir _INFORMANDO DISTRO E VERSÃO_.
 
 ```sh
 bash Zabbix_Proxy/zbx_proxy.sh install debian 9
 ```
 
-* 4. Por fim realize a instalação do repositório offline.
+4. Por fim realize a instalação do repositório offline.
 
 ```sh
 bash Zabbix_Proxy/zbx_proxy.sh repositorio debian
