@@ -18,6 +18,7 @@ git clone https://github.com/SuporteTradein/Zabbix_Proxy.git
 bash Zabbix_Proxy/zbx_proxy.sh download debian 9
 ```
 _OBS.: INFORMAR DISTRO TOTALMENTE EM MINUSCULO, ABAIXO ESTÁ A LISTA DE DISTRO E VERSÕES SUPORTADAS._
+
 _OBS.2: PARA OS SISTEMAS CENTOS, RED-HAT E ORACLE UTILIZAR "rhel"._
 
 3. Em caso de primeira instalação execute o comando a seguir _INFORMANDO DISTRO E VERSÃO_.
