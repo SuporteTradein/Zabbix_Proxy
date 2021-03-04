@@ -27,12 +27,14 @@ cd Zabbix_Proxy ; ./zbx_proxy.py
 |-----------|-----------|
 | Debian    | 9 - 8 - 7 |
 | Ubuntu    | 18 - 16 - 14 |
-| CentOS    | 7 - 6     |
-| Red Hat   | 7 - 6     |
-| Oracle    | 7 - 6     |
+| CentOS    | 7 - 6 - 8     |
+| Red Hat   | 7 - 6 - 8    |
+| Oracle    | 7 - 6 - 8    |
 
 ## Histórico de lançamentos
 
+* 0.2
+    * Adicionado o suporte a CentOS 8.
 * 0.1
     * Primeiro lançamento.
 * @alpha
