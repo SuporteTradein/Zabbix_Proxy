@@ -8,7 +8,7 @@
 # --------------------------------------
 #	DESCRICAO:
 #		Este programa tem como funcao auxiliar a
-#		instalacao, configuracao e manutencao dos 
+#		instalacao, configuracao e manutencao dos
 #		pacotes zabbix da TradeIN.
 # --------------------------------------
 #	NOTAS:
@@ -17,7 +17,7 @@
 #	Matheus.Viana 	14/03/2019 - Primeira versao
 #
 # ----------- BUGS ENCONTRADOS ---------
-#   VARIAVEIS DE COLETA DE SO NÃO ESTA FUNCIONANDO PARA RHEL - 14/08/2019
+#   VARIAVEIS DE COLETA DE SO NAO ESTA FUNCIONANDO PARA RHEL - 14/08/2019
 #   REESCREVER TODO O CODIGO PARA RHEL
 # ----------- IMPORTS ------------
 import os
@@ -112,6 +112,8 @@ def download():
 		os.system('dpkg -i {}/zabbix-release_4.0-2+trusty_all.deb 1>/dev/null'.format(pwd))
 		print('Atualizando pacotes...')
 		os.system('apt update 1>/dev/null')
+	elif distro == 'rhel' and versao == '8':
+		os.system('rpm -i https://repo.zabbix.com/zabbix/4.0/rhel/8/x86_64/zabbix-release-4.0-2.el8.noarch.rpm 1>/dev/null')
 	elif distro == 'rhel' and versao == '7':
 		os.system('rpm -i https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm 1>/dev/null')
 	elif distro == 'rhel' and versao == '6':
