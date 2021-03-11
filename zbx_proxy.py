@@ -23,12 +23,12 @@
 import os
 import commands
 import socket
-# ----- CABECARIO DO PROGRAMA -----
-cabecario = '\n[+] - Bem-vindo ao instalador zabbix_tdn - [+]\n[+] - Desenvolvido por Matheus Viana - [+]\n[+] - Para informar bugs mande o print para matheus.viana@tradein.com.br - [+]\n'
+# ----- CABECALHO DA MINHA POMBA -----
+cabecalho = '\n[+] - Bem-vindo ao instalador zabbix_tdn - [+]\n[+] - Desenvolvido por Matheus Viana - [+]\n[+] - Para informar bugs mande o print para matheus.viana@tradein.com.br - [+]\n'
 # ---------- LIMPAR TELA ----------
 def clearner():
 	os.system("clear")
-	print(cabecario)
+	print(cabecalho)
 
 clearner()
 # --------- PREINSTALANDO PACOTES ------------
@@ -36,7 +36,7 @@ print('Verificando se todos os pacotes necessarios estao instalados...')
 os.system('apt install lsb-release')
 print('Tudo ok.')
 os.system('sleep 0.7')
-# -------- VARIAVEIS DE COLETA DE SO ---------  ## ESTA PARTE NÃO ESTA FUNCIONANDO PARA SISTEMAS RHEL
+# -------- VARIAVEIS DE COLETA DE SO ---------  ## ESTA PARTE NAO ESTA FUNCIONANDO PARA SISTEMAS RHEL
 system = commands.getoutput("lsb_release -a")
 lista = system.split(' ')
 
@@ -57,7 +57,7 @@ def download():
 		os.system('echo "deb http://deb.debian.org/debian stretch main contrib non-free" > /etc/apt/sources.list')
 		os.system('echo "deb-src http://deb.debian.org/debian stretch main contrib non-free" >> /etc/apt/sources.list')
 		print('Baixando pacotes...')
-		os.system('wget -q https://repo.zabbix.com/zabbix/4.0/debian/pool/main/z/zabbix-release/zabbix-release_4.0-2+stretch_all.deb 1>/dev/null')
+		os.system('wget -q https://repo.zabbix.com/zabbix/4.0/debian/pool/main/z/zabbix-release/zabbix-release_4.0-3+stretch_all.deb 1>/dev/null')
 		print('Instalando pacotes...')
 		os.system('dpkg -i {}/zabbix-release_4.0-2+stretch_all.deb 1>/dev/null'.format(pwd))
 		print('Atualizando pacotes...')
@@ -67,19 +67,19 @@ def download():
 		os.system('echo "deb http://deb.debian.org/debian jessie main contrib non-free" > /etc/apt/sources.list')
 		os.system('echo "deb-src http://deb.debian.org/debian jessie main contrib non-free" >> /etc/apt/sources.list')
 		print('Baixando pacotes...')
-		os.system('wget -q https://repo.zabbix.com/zabbix/4.0/debian/pool/main/z/zabbix-release/zabbix-release_4.0-2+jessie_all.deb 1>/dev/null')
+		os.system('wget -q https://repo.zabbix.com/zabbix/4.0/debian/pool/main/z/zabbix-release/zabbix-release_4.0-3+jessie_all.deb 1>/dev/null')
 		print('Instalando pacotes...')
 		os.system('dpkg -i {}/zabbix-release_4.0-2+jessie_all.deb 1>/dev/null'.format(pwd))
 		print('Atualizando pacotes...')
 		os.system('apt update 1>/dev/null')
-	elif distro == 'debian' and versao == '7':
+	elif distro == 'debian' and versao == '10':
 		os.system("cp /etc/apt/sources.list /etc/apt/sources.list.old")
-		os.system('echo "deb http://deb.debian.org/debian wheezy main contrib non-free" > /etc/apt/sources.list')
-		os.system('echo "deb-src http://deb.debian.org/debian wheezy main contrib non-free" >> /etc/apt/sources.list')
+		os.system('echo "deb http://deb.debian.org/debian buster main contrib non-free" > /etc/apt/sources.list')
+		os.system('echo "deb-src http://deb.debian.org/debian buster main contrib non-free" >> /etc/apt/sources.list')
 		print('Baixando pacotes...')
-		os.system('wget -q https://repo.zabbix.com/zabbix/4.0/debian/pool/main/z/zabbix-release/zabbix-release_4.0-2+wheezy_all.deb 1>/dev/null')
+		os.system('wget -q https://repo.zabbix.com/zabbix/4.0/debian/pool/main/z/zabbix-release/zabbix-release_4.0-3+buster_all.deb 1>/dev/null')
 		print('Instalando pacotes...')
-		os.system('dpkg -i {}/zabbix-release_4.0-2+wheezy_all.deb 1>/dev/null'.format(pwd))
+		os.system('dpkg -i {}/zabbix-release_4.0-3+buster_all.deb 1>/dev/null'.format(pwd))
 		print('Atualizando pacotes...')
 		os.system('apt update 1>/dev/null')
 	elif distro == 'ubuntu' and versao == '18':
@@ -87,9 +87,9 @@ def download():
 		os.system('echo "deb http://us.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" > /etc/apt/sources.list')
 		os.system('echo "deb-src http://us.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list')
 		print('Baixando pacotes...')
-		os.system('wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-2+bionic_all.deb 1>/dev/null')
+		os.system('wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-3+bionic_all.deb 1>/dev/null')
 		print('Instalando pacotes...')
-		os.system('dpkg -i {}/zabbix-release_4.0-2+bionic_all.deb 1>/dev/null'.format(pwd))
+		os.system('dpkg -i {}/zabbix-release_4.0-3+bionic_all.deb 1>/dev/null'.format(pwd))
 		print('Atualizando pacotes...')
 		os.system('apt update 1>/dev/null')
 	elif distro == 'ubuntu' and versao == '16':
@@ -97,9 +97,9 @@ def download():
 		os.system('echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse" > /etc/apt/sources.list')
 		os.system('echo "deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse" >> /etc/apt/sources.list')
 		print('Baixando pacotes...')
-		os.system('wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-2+xenial_all.deb 1>/dev/null')
+		os.system('wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-3+xenial_all.deb 1>/dev/null')
 		print('Instalando pacotes...')
-		os.system('dpkg -i {}/zabbix-release_4.0-2+xenial_all.deb 1>/dev/null'.format(pwd))
+		os.system('dpkg -i {}/zabbix-release_4.0-3+xenial_all.deb 1>/dev/null'.format(pwd))
 		print('Atualizando pacotes...')
 		os.system('apt update 1>/dev/null')
 	elif distro == 'ubuntu' and versao == '14':
@@ -107,9 +107,9 @@ def download():
 		os.system('echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list')
 		os.system('echo "deb-src http://us.archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse" >> /etc/apt/sources.list')
 		print('Baixando pacotes...')
-		os.system('wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-2+trusty_all.deb 1>/dev/null')
+		os.system('wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-3+trusty_all.deb 1>/dev/null')
 		print('Instalando pacotes...')
-		os.system('dpkg -i {}/zabbix-release_4.0-2+trusty_all.deb 1>/dev/null'.format(pwd))
+		os.system('dpkg -i {}/zabbix-release_4.0-3+trusty_all.deb 1>/dev/null'.format(pwd))
 		print('Atualizando pacotes...')
 		os.system('apt update 1>/dev/null')
 	elif distro == 'rhel' and versao == '8':
@@ -187,8 +187,8 @@ def install():
 		print('Pre-instalando mais alguns pacotes necessarios...')
 		os.system('apt install -y vim mlocate snmp-mibs-downloader snmp htop 1>/dev/null')
 		print('Instalando sistema...')
-		os.system('apt install -y mysql-server zabbix-proxy-mysql zabbix-get zabbix-agent 1>/dev/null')
-		os.system('service mysql start')
+		os.system('apt install -y mariadb-server zabbix-proxy-mysql zabbix-get zabbix-agent 1>/dev/null')
+		os.system('service mariadb start')
 		print('Criando banco de dados...')
 		os.system('mysql -uroot -p -e"create database zabbix character set utf8 collate utf8_bin;"')
 		os.system('mysql -uroot -p -e"{}"'.format(comando_sql))
