@@ -2,7 +2,7 @@
 #
 #        zbx_tdn.py - Instalador de pacotes zabbix
 # --------------------------------------
-# __versao__ = "2.0"
+# __versao__ = "2.1"
 # __author__ = "Matheus Oliveira Viana"
 # __email __ = "matheus.viana@tradein.com.br"
 # --------------------------------------
@@ -15,6 +15,7 @@
 # --------------------------------------
 #	MODIFICADO POR(DD/MM/YYYY)
 #	Matheus.Viana 	14/03/2019 - Primeira versao
+#   Matheus.Viana	11/03/2021 - Adicionado Suporte a RHEL 8 e Debian 10, removido suporte a Debian 7
 #
 # ----------- BUGS ENCONTRADOS ---------
 #   VARIAVEIS DE COLETA DE SO NAO ESTA FUNCIONANDO PARA RHEL - 14/08/2019
@@ -23,7 +24,7 @@
 import os
 import commands
 import socket
-# ----- CABECALHO DA MINHA POMBA -----
+# ----- CABECALHO DO PROGRAMA -----
 cabecalho = '\n[+] - Bem-vindo ao instalador zabbix_tdn - [+]\n[+] - Desenvolvido por Matheus Viana - [+]\n[+] - Para informar bugs mande o print para matheus.viana@tradein.com.br - [+]\n'
 # ---------- LIMPAR TELA ----------
 def clearner():
