@@ -25,14 +25,11 @@ cd Zabbix_Proxy ; ./zbx_proxy.py
 ## Abaixo distros e versões suportadas
 | SO DISTRO | SO VERSION|
 |-----------|-----------|
-| Debian    | 9 - 8 - 7 |
-| Ubuntu    | 18 - 16 - 14 |
-| CentOS    | 7 - 6 - 8     |
-| Red Hat   | 7 - 6 - 8    |
-| Oracle    | 7 - 6 - 8    |
+| Debian    |     10    |
 
 ## Histórico de lançamentos
-
+* 0.3
+    * Modificado para suporte a Debian 10
 * 0.2
     * Adicionado o suporte a CentOS 8.
 * 0.1

@@ -18,8 +18,6 @@
 #   Matheus.Viana	11/03/2021 - Adicionado Suporte a RHEL 8 e Debian 10, removido suporte a Debian 7
 #	Matheus.Viana	11/08/2021 - Padronizado suporte somente a Debian 10, removida funcao repositorio.
 #
-# ----------- BUGS ENCONTRADOS ---------
-#   
 # ----------- IMPORTS ------------
 import os
 import subprocess
@@ -115,5 +113,4 @@ def menu():
 		print('Voce informou a opcao {} e ela nao e valida!!!\n'.format(acao))
 		menu()
 	
-
 menu()
