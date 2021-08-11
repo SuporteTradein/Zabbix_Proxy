@@ -64,18 +64,6 @@ def configure():
 	conf.write("CacheSize=1G\nDBName={}\nDBPassword={}\nDBUser={}\nDebugLevel=3\nEnableRemoteCommands=1\nExternalScripts=/usr/lib/zabbix/externalscripts\nFping6Location=/usr/sbin/fping6\nFpingLocation=/usr/sbin/fping\nHistoryCacheSize=128M\nHistoryIndexCacheSize=32M\nHostname={}\nLogFileSize=1024\nLogFile=/var/log/zabbix/zabbix_proxy.log\nLogSlowQueries=3000\nPidFile=/var/run/zabbix/zabbix_proxy.pid\nServer=monitoramento.tradein.com.br\nSNMPTrapperFile=/var/log/snmptrap/snmptrap.log\nSocketDir=/var/run/zabbix\nStartDBSyncers=8\nStartPollers=10\nStartPollersUnreachable=5\nTimeout=30\nUnreachablePeriod=60\n".format(namedb, passdb, userdb, hostname))
 	conf.close()
 
-def configure_agent():
-	conf_file = os.path.isfile('/etc/zabbix/zabbix_agentd.conf')
-	hostname = socket.gethostname()
-	ipa = input('Qual o ip do proxy?: ')
-	
-	if conf_file == 'True':
-		os.system('mv /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf-bkp')
-	
-	conf = open("/etc/zabbix/zabbix_agentd.conf","w +")
-	conf.write("PidFile=/var/run/zabbix/zabbix_agentd.pid\nLogFile=/var/log/zabbix/zabbix_agentd.log\nLogFileSize=0\nEnableRemoteCommands=1\nServer={}\nHostname={}\nTimeout=30\nAllowRoot=1\nInclude=/etc/zabbix/zabbix_agentd.d/*.conf\nUserParameter=zbx_upd[*],/etc/zabbix/scripts/zbx_agnt_lnx.sh update debian 10".format(ipa, hostname))
-	conf.close()
-
 def install():
 	clearner()
 	download()
