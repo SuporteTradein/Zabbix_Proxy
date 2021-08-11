@@ -2,7 +2,7 @@
 #
 #        zbx_tdn.py - Instalador de pacotes zabbix
 # --------------------------------------
-# __versao__ = "3.1"
+# __versao__ = "3.1.1"
 # __author__ = "Matheus Oliveira Viana"
 # __email __ = "matheus.viana@tradein.com.br"
 # --------------------------------------
@@ -90,8 +90,8 @@ def install():
 	os.system('mysql -uroot -p -e"{}"'.format(comando_sql))
 	os.system('zcat /usr/share/doc/zabbix-proxy-mysql*/schema.sql.gz | mysql -Dzabbix -uzabbix -p_zabbix@sql')
 	configure()
-	configure_agent()
 	os.system('update-rc.d zabbix-proxy enable')
+	os.system('service zabbix-proxy start')
 	clearner()
 
 def update():
@@ -101,13 +101,13 @@ def update():
 # ----- CONTROLADOR DE FLUXO SECUNDARIO -----
 def menu():
 	acao = input('--- Escolha uma opcao do menu ---\n\n[1] - Instalar\t\tExecuta a instalacao do proxy e agente Zabbix.\n[2] - Update\t\tExecuta o upgrade dos pacotes Zabbix.\n[3] - Download\t\tFaz o download dos repositorios Zabbix, mas nao executa a instalacao do sistema.\n\n[0] - Exit\t\tSai do programa.\n\n[+] - Selecione uma opcao[0-7]: \n\n')
-	if acao == '1':
+	if acao == 1:
 		install()
-	elif acao == '2':
+	elif acao == 2:
 		update()
-	elif acao == '3':
+	elif acao == 3:
 		download()
-	elif acao == '0':
+	elif acao == 0:
 		exit()
 	else:
 		print('Voce informou a opcao {} e ela nao e valida!!!\n'.format(acao))
