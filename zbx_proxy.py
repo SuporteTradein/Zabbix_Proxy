@@ -2,7 +2,7 @@
 #
 #        zbx_tdn.py - Instalador de pacotes zabbix
 # --------------------------------------
-# __versao__ = "3.0"
+# __versao__ = "3.1"
 # __author__ = "Matheus Oliveira Viana"
 # __email __ = "matheus.viana@tradein.com.br"
 # --------------------------------------
@@ -20,7 +20,7 @@
 #
 # ----------- IMPORTS ------------
 import os
-import subprocess
+import commands
 import socket
 # ----- CABECALHO DO PROGRAMA -----
 cabecalho = '\n[+] - Bem-vindo ao instalador zabbix_tdn - [+]\n[+] - Desenvolvido por Matheus Viana - [+]\n[+] - Para informar bugs mande o print para matheus.viana@tradein.com.br - [+]\n'
@@ -31,7 +31,7 @@ def clearner():
 
 clearner()
 # --------- VAREAVEIS GLOBAIS ------------
-pwd = subprocess.getoutput('pwd')
+pwd = commands.getoutput('pwd')
 # ----------- FUNCOES DO PROGRAMA ------------
 def download():
 	print('\n Preparando ambiente para instalacao...\n')
@@ -51,9 +51,9 @@ def configure():
 
 	if conf_file == 'True':
 		os.system('mv /etc/zabbix/zabbix_proxy.conf /etc/zabbix/zabbix_proxy.conf-bkp')
-		passdb = subprocess.getoutput('cat /etc/zabbix/zabbix_proxy.conf-bkp | grep -v "#" | grep "DBPassword=" | cut -d "=" -f 2')
-		userdb = subprocess.getoutput('cat /etc/zabbix/zabbix_proxy.conf-bkp | grep -v "#" | grep "DBUser=" | cut -d "=" -f 2')
-		namedb = subprocess.getoutput('cat /etc/zabbix/zabbix_proxy.conf-bkp | grep -v "#" | grep "DBName=" | cut -d "=" -f 2')
+		passdb = commands.getoutput('cat /etc/zabbix/zabbix_proxy.conf-bkp | grep -v "#" | grep "DBPassword=" | cut -d "=" -f 2')
+		userdb = commands.getoutput('cat /etc/zabbix/zabbix_proxy.conf-bkp | grep -v "#" | grep "DBUser=" | cut -d "=" -f 2')
+		namedb = commands.getoutput('cat /etc/zabbix/zabbix_proxy.conf-bkp | grep -v "#" | grep "DBName=" | cut -d "=" -f 2')
 	else:
 		passdb = '_zabbix@sql'
 		userdb = 'zabbix'
