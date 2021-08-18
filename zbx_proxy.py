@@ -61,7 +61,7 @@ def configure():
 
 	hostname = socket.gethostname()
 	conf = open("/etc/zabbix/zabbix_proxy.conf","w +")
-	conf.write("CacheSize=1G\nDBName={}\nDBPassword={}\nDBUser={}\nDebugLevel=3\nEnableRemoteCommands=1\nExternalScripts=/usr/lib/zabbix/externalscripts\nFping6Location=/usr/sbin/fping6\nFpingLocation=/usr/sbin/fping\nHistoryCacheSize=128M\nHistoryIndexCacheSize=32M\nHostname={}\nLogFileSize=1024\nLogFile=/var/log/zabbix/zabbix_proxy.log\nLogSlowQueries=3000\nPidFile=/var/run/zabbix/zabbix_proxy.pid\nServer=monitoramento.tradein.com.br\nSNMPTrapperFile=/var/log/snmptrap/snmptrap.log\nSocketDir=/var/run/zabbix\nStartDBSyncers=8\nStartPollers=10\nStartPollersUnreachable=5\nTimeout=30\nUnreachablePeriod=60\n".format(namedb, passdb, userdb, hostname))
+	conf.write("CacheSize=1G\nDBName={}\nDBPassword={}\nDBUser={}\nDebugLevel=3\nEnableRemoteCommands=1\nExternalScripts=/usr/lib/zabbix/externalscripts\nFping6Location=/usr/bin/fping6\nFpingLocation=/usr/bin/fping\nHistoryCacheSize=128M\nHistoryIndexCacheSize=32M\nHostname={}\nLogFileSize=1024\nLogFile=/var/log/zabbix/zabbix_proxy.log\nLogSlowQueries=3000\nPidFile=/var/run/zabbix/zabbix_proxy.pid\nServer=monitoramento.tradein.com.br\nSNMPTrapperFile=/var/log/snmptrap/snmptrap.log\nSocketDir=/var/run/zabbix\nStartDBSyncers=8\nStartPollers=10\nStartPollersUnreachable=5\nTimeout=30\nUnreachablePeriod=60\n".format(namedb, passdb, userdb, hostname))
 	conf.close()
 
 def install():
