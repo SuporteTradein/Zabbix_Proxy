@@ -2,7 +2,7 @@
 #
 #        zbx_tdn.py - Instalador de pacotes zabbix
 # --------------------------------------
-# __versao__ = "3.1.1"
+# __versao__ = "3.2.1"
 # __author__ = "Matheus Oliveira Viana"
 # __email __ = "matheus.viana@tradein.com.br"
 # --------------------------------------
@@ -17,6 +17,7 @@
 #	Matheus.Viana 	14/03/2019 - Primeira versao
 #   Matheus.Viana	11/03/2021 - Adicionado Suporte a RHEL 8 e Debian 10, removido suporte a Debian 7
 #	Matheus.Viana	11/08/2021 - Padronizado suporte somente a Debian 10, removida funcao repositorio.
+#	Rafael.Costa	04/02/2022 - Add aqui depois
 #
 # ----------- IMPORTS ------------
 import os
